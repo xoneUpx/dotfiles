@@ -1,12 +1,14 @@
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'ambv/black'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"let g:coc_global_extensions = [
-"  \ 'coc-tsserver'
-"  \ ]
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
 Plug 'tpope/vim-rhubarb'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
@@ -53,7 +55,19 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nnoremap <leader>ga :Grepper<cr>
 nnoremap <leader>gb :Grepper -buffer<cr>
 nnoremap <leader>ff :Files<cr>
 nnoremap <leader>f :Rg<cr>
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
