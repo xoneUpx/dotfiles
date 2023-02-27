@@ -1,0 +1,27 @@
+
+set from = "bobokuos@gmail.com"
+set realname = "xgiantenemycrabx"
+ 
+# IMAP settings
+set imap_user = "bobokuos@gmail.com"
+#app password
+#encrypt it!
+#set imap_pass = pxpmhdxpzgtrpsyg        
+source "gpg -dq /home/bobok/.mutt/pass.gpg |"
+set imap_pass = $my_pass
+ 
+# SMTP settings
+#set smtp_url = "smtp://bobokuos@smtp.gmail.com:587"
+set smtp_url = "smtps://bobokuos@smtp.gmail.com:465"
+set smtp_pass = pxpmhdxpzgtrpsyg
+ 
+# Remote Gmail folders
+set folder = "imaps://imap.gmail.com:993/"
+set spoolfile = "+INBOX"
+#???
+#set postponed = "+[Gmail]/Drafts"
+#set record = "+[Gmail]/Sent Mail"
+#set trash = "+[Gmail]/Trash"
+set smtp_authenticators="login" 
+set ssl_starttls = yes 
+set ssl_force_tls = yes 

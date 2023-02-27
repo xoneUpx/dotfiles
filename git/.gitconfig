@@ -1,0 +1,10 @@
+[hub]
+  protocol = https
+[credential "https://github.com"]
+  helper =
+  helper = !/usr/bin/gh auth git-credential
+[user]
+  name = xoneUpx
+  email = bobokuos@gmail.com
+[init]
+    templatedir = ~/.git_template

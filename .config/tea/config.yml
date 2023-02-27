@@ -1,0 +1,10 @@
+logins:
+- name: bobok
+  url: https://10.1.4.1:8443/gitea
+  token: a7f4a6c8577552a8c4fb4d15bfdfa8d898eba79d
+  default: false
+  ssh_host: 10.1.4.1
+  ssh_key: ""
+  insecure: true
+  user: bobok
+  created: 1676319919
