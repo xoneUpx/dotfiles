@@ -6,7 +6,6 @@ set realname = "xgiantenemycrabx"
 set imap_user = "bobokuos@gmail.com"
 #app password
 #encrypt it!
-#set imap_pass = pxpmhdxpzgtrpsyg        
 source "gpg -dq /home/bobok/.mutt/pass.gpg |"
 set imap_pass = $my_pass
  
